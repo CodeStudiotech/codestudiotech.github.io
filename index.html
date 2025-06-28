@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CodeStudio.tech by Aliya Ayubkhan Pathan</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: url('https://www.transparenttextures.com/patterns/cream-dust.png');
+      color: #4b2e2e;
+    }
+
+    header {
+      background: #f2e6d9;
+      color: #4b2e2e;
+      padding: 2rem;
+      text-align: center;
+      border-bottom: 2px solid #e6d5c3;
+    }
+
+    nav a {
+      margin: 0 1rem;
+      color: #4b2e2e;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .logo-container {
+      margin-bottom: 1rem;
+      animation: fadeInUp 1s ease-out;
+    }
+
+    .logo-link {
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .animated-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      letter-spacing: 1px;
+      text-align: center;
+    }
+
+    .animated-logo .code {
+      color: #7d5a50;
+      animation: slideInLeft 0.8s ease-out;
+    }
+
+    .animated-logo .studio {
+      color: #3d2b1f;
+      animation: slideInRight 0.8s ease-out;
+    }
+
+    .animated-logo .dot-tech {
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: #8b6f63;
+      font-family: 'Quicksand', sans-serif;
+      animation: fadeIn 1.2s ease-out;
+    }
+
+    .subtext {
+      font-size: 1rem;
+      color: #5a4033;
+      font-family: 'Quicksand', sans-serif;
+      animation: fadeIn 2s ease-out;
+      margin-top: 0.5rem;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 2rem;
+    }
+
+    .hero {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .hero h2 {
+      font-size: 2rem;
+      color: #3d2b1f;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      margin-top: 1rem;
+      color: #5a4033;
+    }
+
+    .quote {
+      font-style: italic;
+      font-size: 1rem;
+      margin-top: 1rem;
+      color: #7d5a50;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .project-card {
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      transition: transform 0.2s ease;
+      border: 1px solid #e9dcd1;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .project-card h3::before {
+      content: "\1F4C4 "; /* 📄 icon */
+    }
+
+    .project-card h3 {
+      color: #5c4033;
+      margin-bottom: 0.5rem;
+    }
+
+    .btn {
+      background: #7d5a50;
+      color: white;
+      padding: 0.6rem 1.2rem;
+      border-radius: 6px;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 1rem;
+      transition: background 0.2s ease;
+    }
+
+    .btn:hover {
+      background: #5a3e36;
+    }
+    
+    .project-wrapper {
+  position: relative;
+}
+
+.sale-ribbon {
+  width: 80px;
+  background: #b84c4c;
+  color: white;
+  text-align: center;
+  font-size: 0.7rem;
+  font-weight: bold;
+  padding: 5px 0;
+  position: absolute;
+  top: 12px;
+  right: -25px;
+  transform: rotate(45deg);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  z-index: 10;
+}
+
+.save-tag {
+  display: inline-block;
+  background-color: #fff0ec;
+  color: #b84c4c;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-top: 4px;
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+    
+
+    .testimonial {
+      background: #fff8f0;
+      border-left: 4px solid #7d5a50;
+      padding: 1rem;
+      margin: 1rem 0;
+      font-style: italic;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    footer {
+      background: #f2e6d9;
+      color: #4b2e2e;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 4rem;
+      border-top: 2px solid #e6d5c3;
+    }
+
+    /* Animations */
+    @keyframes slideInLeft {
+      from { transform: translateX(-30px); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+
+    @keyframes slideInRight {
+      from { transform: translateX(30px); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInUp {
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    
+    .name-highlight {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  font-style: italic;
+  color: #4b2e2e;
+  margin-top: 0.3rem;
+}
+
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #e6f9ed;
+  color: #14532d;
+  padding: 1.2rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  z-index: 9999;
+  font-weight: 600;
+  text-align: center;
+  animation: fadeInOut 3s ease-in-out;
+  max-width: 90%;
+}
+
+.popup-close {
+  position: absolute;
+  top: 6px;
+  right: 12px;
+  font-size: 1.2rem;
+  color: #14532d;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700&display=swap');
+
+.signature-underline {
+  width: 220px;
+  height: 20px;
+  margin: 0 auto;
+  display: block;
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+  animation: drawLine 2.5s ease-out forwards;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+@keyframes drawLine {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+
+
+ .btn {
+  background: linear-gradient(135deg, #14532d, #166534); /* dark green gradient */
+  color: white;
+  padding: 0.6rem 1.4rem;
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: bold;
+  margin-top: 1rem;
+  font-size: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: linear-gradient(135deg, #166534, #14532d); /* reverse gradient on hover */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(20, 83, 45, 0.5);
+  }
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 12px rgba(20, 83, 45, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(20, 83, 45, 0);
+  }
+}
+
+.pulse {
+  animation: pulse 2s infinite;
+}
+ 
+    
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo-container">
+      <a href="#home" class="logo-link">
+        <h1 class="animated-logo">
+          <span class="code">Code</span><span class="studio">Studio</span><span class="dot-tech">.tech✨</span>
+        </h1>
+      </a>
+      <div class="signature-wrapper">
+      <p class="name-highlight"><strong><em>✨ Developed by ALIYA AYUBKHAN PATHAN</em></strong></p>
+       <svg viewBox="0 0 220 20" class="signature-underline">
+       <path d="M10 15 Q 50 5 90 15 T 170 15 Q 190 25 210 15" stroke="#7d5a50" stroke-width="2" fill="transparent"/>
+      </svg>
+     </div>
+      
+     
+</div>
+     
+     
+     
+    </div>
+    
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <div class="container" id="home">
+    <div class="hero">
+      <h2>Get Ready-Made Java & JSP Projects</h2>
+      <p>Affordable | Working Code | Student Friendly</p>
+      <p class="quote">"Coding is not just code, it's a craft of logic and creativity."</p>
+    </div>
+  </div>
+
+  <div class="container" id="projects">
+    <h2 style="margin-bottom: 2rem; text-align: center;"> Mini and Custom Projects Available</h2>
+    <div class="project-grid">
+
+  <!-- Project 1 -->
+  <div class="project-wrapper">
+    <div class="sale-ribbon">SALE</div>
+    <div class="project-card">
+      <h3>Login System (JSP + MySQL)</h3>
+      <p>Basic login/registration system with session handling and MySQL database.</p>
+      <p>
+        <strong>Price:</strong>
+        <span style="text-decoration: line-through; color: #a09e9e;">₹699</span>
+        <span style="color: #7d5a50; font-weight: bold;"> ₹399</span><br>
+        <span class="save-tag">Save ₹300</span>
+      </p>
+      <a class="btn pulse" href="https://wa.me/+917038442786?text=Interested%20in%20Grocery%20Store%20Project">
+       Buy Now
+      </a>   
+      
+     
+    </div>
+  </div>
+
+  <!-- Project 2 -->
+  <div class="project-wrapper">
+    <div class="sale-ribbon">SALE</div>
+    <div class="project-card">
+      <h3>Online Grocery Store</h3>
+      <p>Mini e-commerce store with user login, user register, product list, cart, and admin panel.</p>
+      <p>
+        <strong>Price:</strong>
+        <span style="text-decoration: line-through; color: #a09e9e;">₹899</span>
+        <span style="color: #7d5a50; font-weight: bold;"> ₹599</span><br>
+        <span class="save-tag">Save ₹300</span>
+      </p>
+        <a class="btn pulse" href="https://wa.me/+917038442786?text=Interested%20in%20Grocery%20Store%20Project">
+       Buy Now
+      </a>   
+              
+      
+     
+    </div>
+  </div>
+
+  <!-- Project 3 -->
+  <div class="project-wrapper">
+    <div class="sale-ribbon">SALE</div>
+    <div class="project-card">
+      <h3>Appointment Booking System</h3>
+      <p>Book appointments online for clinics or salons with MySQL backend.</p>
+      <p>
+        <strong>Price:</strong>
+        <span style="text-decoration: line-through; color: #a09e9e;">₹999</span>
+        <span style="color: #7d5a50; font-weight: bold;"> ₹699</span><br>
+        <span class="save-tag">Save ₹300</span>
+      </p>
+      
+      
+       <a class="btn pulse" href="https://wa.me/+917038442786?text=Interested%20in%20Grocery%20Store%20Project">
+        Buy Now
+      </a>   
+      
+      
+      
+    </div>
+  </div>
+
+</div>
+    
+  </div>
+
+  <div class="container" id="testimonials">
+    <h2 style="text-align: center; margin-top: 3rem;">What Students Say</h2>
+    <div class="testimonial">"Thanks Aliya! Your grocery store project helped me submit on time and the video guide made it easy!" – Riya S.</div>
+    <div class="testimonial">"Best price and best support! Highly recommend your Java project store." – Pranali S.</div>
+    <div class="testimonial">"Your login system was perfect and saved me hours of work. Will buy again!" – Priya J.</div>
+  </div>
+
+  <div class="container" id="contact" style="text-align: center;">
+    <h2>Contact Me</h2>
+    <p><strong> <i class="fab fa-whatsapp"></i> WhatsApp:</strong> <a href="https://wa.me/+917038442786">Click to Chat</a></p>
+    <p><strong><i class="fas fa-envelope"></i>
+     Email:</strong> pathanaliya2786@gmail.com</p>
+  </div>
+
+  <footer>
+    <p>&copy; 2025  <h5 class="animated-logo">
+          <span class="code">Code</span><span class="studio">Studio</span><span class="dot-tech">.tech✨</span>
+        </h5> by <strong><em>Aliya Ayubkhan Pathan</em></strong></p>
+  </footer>
+
+
+
+<div id="successPopup" class="popup">
+  <span class="popup-close" onclick="closePopup()">×</span>
+  <p>💬 WhatsApp is opening... You can chat with me now!</p>
+</div>
+
+
+
+<script>
+  function showSuccessPopup() {
+    const popup = document.getElementById("successPopup");
+    popup.style.display = "block";
+
+    // Auto close after 3 seconds
+    setTimeout(() => {
+      popup.style.display = "none";
+    }, 3000);
+  }
+
+  function closePopup() {
+    document.getElementById("successPopup").style.display = "none";
+  }
+
+  // Apply to all .btn elements
+  document.querySelectorAll('.btn').forEach(btn => {
+    btn.addEventListener('click', showSuccessPopup);
+  });
+</script>
+
+</body>
+</html>
